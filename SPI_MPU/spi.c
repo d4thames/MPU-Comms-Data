@@ -33,7 +33,7 @@ void spi_tx(uint8_t address, uint8_t data)
 	//Frame: R/W | 7bit address | 8bit data
 
 	//TODO concatinate (?) address and data
-	address += 0x80;
+	address += 0x8;
 	SPDR = (address<<8) | data;
 
 	while(!(SPSR & _BV(SPIF)))	//Check if transfer is complete
